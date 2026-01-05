@@ -1,313 +1,376 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="utf-8" />
-    <meta name="description" content="СмотриКино - онлайн кинотеатр с фильмами, сериалами и новостями кино" />
-    <title>СмотриКино - Главная</title>
-    <link rel="stylesheet" href="globals.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="frame" data-model-id="1:27">
-      <div class="background" role="presentation" aria-hidden="true">
-        <div class="rectangle"></div>
-        <div class="div"></div>
-      </div>
-      
-      <header class="header">
-        <div class="header-background"></div>
-        <div class="title">
-          <span class="title-text">СМОТРИ</span>
-          <img
-            class="movie-clapper-open"
-            src="assets/img/movie-clapper-open-1@2x.png"
-            alt=""
-            aria-hidden="true"
-          />
-          <span class="title-text">КИНО</span>
-        </div>
-        <form class="search-bar" role="search" aria-label="Поиск фильмов и сериалов">
-          <label for="search-input" class="visually-hidden">Поиск</label>
-          <input
-            type="search"
-            id="search-input"
-            class="search-input"
-            placeholder="Поиск..."
-            aria-label="Поиск фильмов и сериалов"
-          />
-          <button type="submit" class="search-button" aria-label="Найти">
-            <img class="loopa" src="assets/img/loopa-1@2x.png" alt="" />
-          </button>
-        </form>
-        <div class="border" role="separator" aria-hidden="true"></div>
-        <nav class="navbar" aria-label="Основная навигация">
-          <a href="#movies" class="nav-link">ФИЛЬМЫ</a>
-          <a href="#tv-series" class="nav-link">СЕРИАЛЫ</a>
-          <a href="#actors" class="nav-link">АКТЕРЫ</a>
-          <a href="#events" class="nav-link">СОБЫТИЯ</a>
-          <a href="#news" class="nav-link">НОВОСТИ</a>
-        </nav>
-        <div class="account">
-          <a href="#account" class="account-link" aria-label="Войти в аккаунт">
-            <img class="human-icon" src="assets/img/human-icon@2x.png" alt="" />
-            <span class="account-text">ВОЙТИ</span>
-          </a>
-        </div>
-      </header>
-      
-      <section class="news-card-container" aria-labelledby="news-section">
-        <h2 id="news-section" class="visually-hidden">Новости</h2>
-        <article class="news-card news-card-main">
-          <div class="news-card-background" role="presentation" aria-hidden="true"></div>
-          <img
-            class="news-image"
-            src="assets/img/news-image.png"
-            alt="Был ли единорог на самом деле?"
-          />
-          <h3 class="news-title">БЫЛ ЛИ ЕДИНОРОГ НА САМОМ ДЕЛЕ?</h3>
-          <p class="news-desc">10 ФАКТОВ О ВСЕЛЕННОЙ КУЛЬТОВОГО ФАНТАСТИЧЕСКОГО ТРИЛЛЕРА</p>
-        </article>
-        <article class="news-card news-card-mini">
-          <div class="news-card-background" role="presentation" aria-hidden="true"></div>
-          <img
-            class="news-image"
-            src="assets/img/news-image-2@2x.png"
-            alt="Был ли единорог на самом деле?"
-          />
-          <h3 class="news-title">БЫЛ ЛИ ЕДИНОРОГ НА САМОМ ДЕЛЕ?</h3>
-          <p class="news-desc">10 ФАКТОВ О ВСЕЛЕННОЙ КУЛЬТОВОГО ФАНТАСТИЧЕСКОГО ТРИЛЛЕРА</p>
-        </article>
-        <article class="news-card news-card-mini">
-          <div class="news-card-background" role="presentation" aria-hidden="true"></div>
-          <img
-            class="news-image"
-            src="assets/img/news-image-2@2x.png"
-            alt="Был ли единорог на самом деле?"
-          />
-          <h3 class="news-title">БЫЛ ЛИ ЕДИНОРОГ НА САМОМ ДЕЛЕ?</h3>
-          <p class="news-desc">10 ФАКТОВ О ВСЕЛЕННОЙ КУЛЬТОВОГО ФАНТАСТИЧЕСКОГО ТРИЛЛЕРА</p>
-        </article>
-      </section>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СмотриКино</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+</head>
+<body style="background: linear-gradient(108deg, #5d0000 0%, #050505 100%); color: white; margin: 0; font-family: sans-serif; min-height: 100vh;">
 
-      <section class="film-card-container" aria-labelledby="popular-title">
-        <h2 class="category-title" id="popular-title">Популярно сейчас</h2>
-        <div class="film-card-container-separator" role="separator" aria-hidden="true"></div>
-        <article class="film-card">
-          <div class="film-card-background" role="presentation" aria-hidden="true"></div>
-          <img
-            class="film-card-image"
-            src="assets/img/film-card-image-2-7@2x.png"
-            alt="Рокки"
-          />
-          <span class="film-genre">Драма</span>
-          <div class="film-raiting" role="img" aria-label="Рейтинг 7 из 10">7/10</div>
-          <img
-            class="star-icon"
-            src="assets/img/star-icon-7@2x.png"
-            alt=""
-            aria-hidden="true"
-          />
-          <h3 class="film-title">Рокки</h3>
-        </article>
-        <article class="film-card">
-          <div class="film-card-background" role="presentation" aria-hidden="true"></div>
-          <img
-            class="film-card-image"
-            src="assets/img/film-card-image-2-7@2x.png"
-            alt="Рокки"
-          />
-          <span class="film-genre">Драма</span>
-          <div class="film-raiting" role="img" aria-label="Рейтинг 7 из 10">7/10</div>
-          <img
-            class="star-icon"
-            src="assets/img/star-icon-7@2x.png"
-            alt=""
-            aria-hidden="true"
-          />
-          <h3 class="film-title">Рокки</h3>
-        </article>
-        <article class="film-card">
-          <div class="film-card-background" role="presentation" aria-hidden="true"></div>
-          <img
-            class="film-card-image"
-            src="assets/img/film-card-image-2-7@2x.png"
-            alt="Рокки"
-          />
-          <span class="film-genre">Драма</span>
-          <div class="film-raiting" role="img" aria-label="Рейтинг 7 из 10">7/10</div>
-          <img
-            class="star-icon"
-            src="assets/img/star-icon-7@2x.png"
-            alt=""
-            aria-hidden="true"
-          />
-          <h3 class="film-title">Рокки</h3>
-        </article>
-        <article class="film-card">
-          <div class="film-card-background" role="presentation" aria-hidden="true"></div>
-          <img
-            class="film-card-image"
-            src="assets/img/film-card-image-2-7@2x.png"
-            alt="Рокки"
-          />
-          <span class="film-genre">Драма</span>
-          <div class="film-raiting" role="img" aria-label="Рейтинг 7 из 10">7/10</div>
-          <img
-            class="star-icon"
-            src="assets/img/star-icon-7@2x.png"
-            alt=""
-            aria-hidden="true"
-          />
-          <h3 class="film-title">Рокки</h3>
-        </article>
-      </section>
-
-      <section class="film-card-container" aria-labelledby="series-title">
-        <h2 class="category-title" id="series-title">Популярные сериалы</h2>
-        <div class="film-card-container-separator" role="separator" aria-hidden="true"></div>
-        <article class="film-card">
-          <div class="film-card-background" role="presentation" aria-hidden="true"></div>
-          <img
-            class="film-card-image"
-            src="assets/img/film-card-image-2-3@2x.png"
-            alt="Очень странные дела"
-          />
-          <span class="film-genre">Ужасы</span>
-          <div class="film-raiting" role="img" aria-label="Рейтинг 7 из 10">7/10</div>
-          <img
-            class="star-icon"
-            src="assets/img/star-icon-7@2x.png"
-            alt=""
-            aria-hidden="true"
-          />
-          <h3 class="film-title">Очень странные дела</h3>
-        </article>
-        <article class="film-card">
-          <div class="film-card-background" role="presentation" aria-hidden="true"></div>
-          <img
-            class="film-card-image"
-            src="assets/img/film-card-image-2-3@2x.png"
-            alt="Очень странные дела"
-          />
-          <span class="film-genre">Ужасы</span>
-          <div class="film-raiting" role="img" aria-label="Рейтинг 7 из 10">7/10</div>
-          <img
-            class="star-icon"
-            src="assets/img/star-icon-7@2x.png"
-            alt=""
-            aria-hidden="true"
-          />
-          <h3 class="film-title">Очень странные дела</h3>
-        </article>
-        <article class="film-card">
-          <div class="film-card-background" role="presentation" aria-hidden="true"></div>
-          <img
-            class="film-card-image"
-            src="assets/img/film-card-image-2-3@2x.png"
-            alt="Очень странные дела"
-          />
-          <span class="film-genre">Ужасы</span>
-          <div class="film-raiting" role="img" aria-label="Рейтинг 7 из 10">7/10</div>
-          <img
-            class="star-icon"
-            src="assets/img/star-icon-7@2x.png"
-            alt=""
-            aria-hidden="true"
-          />
-          <h3 class="film-title">Очень странные дела</h3>
-        </article>
-        <article class="film-card">
-          <div class="film-card-background" role="presentation" aria-hidden="true"></div>
-          <img
-            class="film-card-image"
-            src="assets/img/film-card-image-2-3@2x.png"
-            alt="Очень странные дела"
-          />
-          <span class="film-genre">Ужасы</span>
-          <div class="film-raiting" role="img" aria-label="Рейтинг 7 из 10">7/10</div>
-          <img
-            class="star-icon"
-            src="assets/img/star-icon-7@2x.png"
-            alt=""
-            aria-hidden="true"
-          />
-          <h3 class="film-title">Очень странные дела</h3>
-        </article>
-      </section>
-      
-      <section class="actor-card-container" aria-labelledby="actors-title">
-        <h2 class="category-title" id="actors-title">Восходящие звезды</h2>
-        <div class="actor-card-container-separator" role="separator" aria-hidden="true"></div>
-        <article class="actor-card">
-          <img
-            class="actor-image"
-            src="assets/img/actor-image-3@2x.png"
-            alt="Арнольд Шварценеггер"
-          />
-          <div class="actor-full-name">
-            <p class="actor-name">Арнольд</p>
-            <p class="actor-surname">Шварценеггер</p>
-          </div>
-        </article>
-        <article class="actor-card">
-          <img
-            class="actor-image"
-            src="assets/img/actor-image-3@2x.png"
-            alt="Арнольд Шварценеггер"
-          />
-          <div class="actor-full-name">
-            <p class="actor-name">Арнольд</p>
-            <p class="actor-surname">Шварценеггер</p>
-          </div>
-        </article>
-        <article class="actor-card">
-          <img
-            class="actor-image"
-            src="assets/img/actor-image-3@2x.png"
-            alt="Арнольд Шварценеггер"
-          />
-          <div class="actor-full-name">
-            <p class="actor-name">Арнольд</p>
-            <p class="actor-surname">Шварценеггер</p>
-          </div>
-        </article>
-        <article class="actor-card">
-          <img
-            class="actor-image"
-            src="assets/img/actor-image-3@2x.png"
-            alt="Арнольд Шварценеггер"
-          />
-          <div class="actor-full-name">
-            <p class="actor-name">Арнольд</p>
-            <p class="actor-surname">Шварценеггер</p>
-          </div>
-        </article>
-      </section>
-      
-      <footer class="footer">
-        <div class="footer-background" role="presentation" aria-hidden="true"></div>
-        <p class="copyright">© 2026-2026,СмотриКино 16+</p>
-        <nav class="info" aria-label="Дополнительная информация">
-          <a href="#" class="info-link">Пользовательское соглашение</a>
-          <a href="#" class="info-link">О нас</a>
-          <a href="#" class="info-link">Политика конфиденциальности</a>
-        </nav>
-        <div class="social" role="list" aria-label="Социальные сети">
-          <a href="#" class="social-link" role="listitem" aria-label="Социальная сеть 1">
-            <img class="social-icon" src="assets/img/social-icon-4@2x.png" alt="" />
-          </a>
-          <a href="#" class="social-link" role="listitem" aria-label="Социальная сеть 2">
-            <img class="social-icon" src="assets/img/social-icon-4@2x.png" alt="" />
-          </a>
-          <a href="#" class="social-link" role="listitem" aria-label="Социальная сеть 3">
-            <img class="social-icon" src="assets/img/social-icon-4@2x.png" alt="" />
-          </a>
-          <a href="#" class="social-link" role="listitem" aria-label="Социальная сеть 4">
-            <img class="social-icon" src="assets/img/social-icon-4@2x.png" alt="" />
-          </a>
+<!-- Header -->
+<div style="background: black; padding: 1rem 0; position: sticky; top: 0; z-index: 1000;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div class="pure-g" style="align-items: center;">
+            <!-- Logo -->
+            <div class="pure-u-1 pure-u-md-1-4" style="text-align: center; padding: 0.5rem;">
+                <a href="#movie" style="font-size: 1.8rem; font-weight: bold; color: white; text-decoration: none;">
+                    <span>СМОТРИ</span>
+                    <span style="color: #ffffff;">КИНО</span>
+                </a>
+            </div>
+            
+            <!-- Search -->
+            <div class="pure-u-1 pure-u-md-1-2" style="text-align: center; padding: 0.5rem;">
+                <form class="pure-form" style="display: inline-block; width: 150%; max-width: 600px;">
+                    <div style="display: flex;">
+                        <input type="text" placeholder="Поиск..." style="flex: 1; border-radius: 25px 0 0 25px;">
+                        <button type="submit" class="pure-button pure-button-primary" style="border-radius: 0 25px 25px 0; background-color: #860202">Найти</button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Account -->
+            <div class="pure-u-1 pure-u-md-1-4" style="text-align: center; padding: 0.5rem;">
+                <a href="#movie" class="pure-button" style="background: #333; color: white; border-radius: 25px; text-decoration: none;">Войти в аккаунт</a>
+            </div>
         </div>
-      </footer>
+        
+        <!-- Navigation -->
+        <div style="margin-top: 1rem; border-top: 2px solid #444; padding-top: 1rem;">
+            <div class="pure-menu pure-menu-horizontal" style="text-align: center; display: flex; justify-content: center; flex-wrap: wrap;">
+                <ul class="pure-menu-list" style="display: flex; gap: 2rem; justify-content: center; padding: 0; margin: 0;">
+                    <li class="pure-menu-item"><a href="#movies" class="pure-menu-link" style="color: white; font-weight: bold; text-decoration: none;">ФИЛЬМЫ</a></li>
+                    <li class="pure-menu-item"><a href="#series" class="pure-menu-link" style="color: white; font-weight: bold; text-decoration: none;">СЕРИАЛЫ</a></li>
+                    <li class="pure-menu-item"><a href="#actors" class="pure-menu-link" style="color: white; font-weight: bold; text-decoration: none;">АКТЕРЫ</a></li>
+                    <li class="pure-menu-item"><a href="#events" class="pure-menu-link" style="color: white; font-weight: bold; text-decoration: none;">СОБЫТИЯ</a></li>
+                    <li class="pure-menu-item"><a href="#news" class="pure-menu-link" style="color: white; font-weight: bold; text-decoration: none;">НОВОСТИ</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </body>
+</div>
+
+<!-- Main Content -->
+<div style="max-width: 1200px; margin: 2rem auto; padding: 0 1rem;">
+
+    <!-- Hero/News Section -->
+    <div style="margin-bottom: 4rem;">
+        <div class="pure-g">
+            <!-- Main News -->
+            <div class="pure-u-1 pure-u-lg-2-3" style="padding: 1rem; width: 60%;">
+                <a href="#news" style="text-decoration: none; display: block; height: 100%;">
+                    <div style="background: black; border-radius: 8px; overflow: hidden; height: 100%; cursor: pointer; transition: transform 0.3s;">
+                        <div style="background: #333; height: 400px; display: flex; align-items: center; justify-content: center;">
+                          <img src="assets/img/news-image.png" alt="Главная новость кино" style="width: 100%; height: 400px; object-fit: cover;">
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <h2 style="margin: 0 0 0.5rem; font-size: 1.5rem; color: white;">БЫЛ ЛИ ЕДИНОРОГ НА САМОМ ДЕЛЕ?</h2>
+                            <p style="color: #ccc; margin: 0;">10 фактов о вселенной культового фантастического триллера</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Side News -->
+            <div class="pure-u-1 pure-u-lg-1-3" style="padding: 1rem;">
+                <div style="display: flex; flex-direction: column; height: 100%; gap: 1rem;">
+                    <!-- News 1 -->
+                    <a href="#news" style="text-decoration: none; display: block; flex: 1;">
+                        <div style="background: black; border-radius: 8px; overflow: hidden; height: 100%; cursor: pointer; transition: transform 0.3s;">
+                            <div style="background: #333; height: 140px; display: flex; align-items: center; justify-content: center;">
+                              <img src="assets/img/news-image.png" alt="Главная новость кино" style="width: 100%; height: 140px; object-fit: cover;">
+                            </div>
+                            <div style="padding: 1rem;">
+                                <h3 style="margin: 0 0 0.5rem; font-size: 1.2rem; color: white;">БЫЛ ЛИ ЕДИНОРОГ НА САМОМ ДЕЛЕ?</h3>
+                                <p style="color: #ccc; margin: 0; font-size: 0.9rem;">10 фактов о вселенной культового фантастического триллера</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- News 2 -->
+                    <a href="#news" style="text-decoration: none; display: block; flex: 1;">
+                        <div style="background: black; border-radius: 8px; overflow: hidden; height: 100%; cursor: pointer; transition: transform 0.3s;">
+                            <div style="background: #333; height: 140px; display: flex; align-items: center; justify-content: center;">
+                              <img src="assets/img/news-image.png" alt="Главная новость кино" style="width: 100%; height: 140px; object-fit: cover;">
+                            </div>
+                            <div style="padding: 1rem;">
+                                <h3 style="margin: 0 0 0.5rem; font-size: 1.2rem; color: white;">БЫЛ ЛИ ЕДИНОРОГ НА САМОМ ДЕЛЕ?</h3>
+                                <p style="color: #ccc; margin: 0; font-size: 0.9rem;">10 фактов о вселенной культового фантастического триллера</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popular Films (4 узкие карточки в ряд) -->
+    <div style="margin-bottom: 4rem;">
+        <h2 style="border-bottom: 2px solid #666; padding-bottom: 0.5rem; margin-bottom: 1.5rem; font-size: 1.8rem;">Популярно сейчас</h2>
+        
+        <div class="pure-g">
+            <!-- Film 1 - Рокки -->
+            <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-4" style="padding: 0.9rem; width: 20%;">
+                <a href="#movie" style="text-decoration: none; display: block; height: 100%;">
+                    <div style="background: black; border-radius: 8px; overflow: hidden; height: 100%; cursor: pointer; transition: transform 0.3s; display: flex; flex-direction: column; width: 100%;">
+                        <div style="background: #333; height: 220px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                          <img src="assets/img/film-card-image-2-7@2x.png" alt="Рокки" style="width: 100%; height: 220px; object-fit: cover;">
+                        </div>
+                        <div style="padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;">
+                            <h3 style="margin: 0 0 0.5rem; font-size: 1.1rem; text-align: center; color: white; flex-grow: 1;">Рокки</h3>
+                            <div style="font-size: 0.9rem; text-align: center; color: gold; margin-top: auto;">
+                                7/10 ★
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Film 2 - Рокки -->
+            <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-4" style="padding: 0.9rem; width: 20%;">
+                <a href="#movie" style="text-decoration: none; display: block; height: 100%;">
+                    <div style="background: black; border-radius: 8px; overflow: hidden; height: 100%; cursor: pointer; transition: transform 0.3s; display: flex; flex-direction: column; width: 100%;">
+                        <div style="background: #333; height: 220px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <img src="assets/img/film-card-image-2-7@2x.png" alt="Рокки" style="width: 100%; height: 220px; object-fit: cover;">
+                        </div>
+                        <div style="padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;">
+                            <h3 style="margin: 0 0 0.5rem; font-size: 1.1rem; text-align: center; color: white; flex-grow: 1;">Рокки</h3>
+                            <div style="font-size: 0.9rem; text-align: center; color: gold; margin-top: auto;">
+                                7/10 ★
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Film 3 - Рокки -->
+            <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-4" style="padding: 0.9rem; width: 20%;">
+                <a href="#movie" style="text-decoration: none; display: block; height: 100%;">
+                    <div style="background: black; border-radius: 8px; overflow: hidden; height: 100%; cursor: pointer; transition: transform 0.3s; display: flex; flex-direction: column; width: 100%;">
+                        <div style="background: #333; height: 220px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <img src="assets/img/film-card-image-2-7@2x.png" alt="Рокки" style="width: 100%; height: 220px; object-fit: cover;">
+                        </div>
+                        <div style="padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;">
+                            <h3 style="margin: 0 0 0.5rem; font-size: 1.1rem; text-align: center; color: white; flex-grow: 1;">Рокки</h3>
+                            <div style="font-size: 0.9rem; text-align: center; color: gold; margin-top: auto;">
+                                7/10 ★
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Film 4 - Рокки -->
+            <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-4" style="padding: 0.9rem; width: 20%;">
+                <a href="#movie" style="text-decoration: none; display: block; height: 100%;">
+                    <div style="background: black; border-radius: 8px; overflow: hidden; height: 100%; cursor: pointer; transition: transform 0.3s; display: flex; flex-direction: column; width: 100%;">
+                        <div style="background: #333; height: 220px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <img src="assets/img/film-card-image-2-7@2x.png" alt="Рокки" style="width: 100%; height: 220px; object-fit: cover;">
+                        </div>
+                        <div style="padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;">
+                            <h3 style="margin: 0 0 0.5rem; font-size: 1.1rem; text-align: center; color: white; flex-grow: 1;">Рокки</h3>
+                            <div style="font-size: 0.9rem; text-align: center; color: gold; margin-top: auto;">
+                                7/10 ★
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- TV Series (4 узкие карточки в ряд) -->
+    <div style="margin-bottom: 4rem;">
+        <h2 style="border-bottom: 2px solid #666; padding-bottom: 0.5rem; margin-bottom: 1.5rem; font-size: 1.8rem;">Популярные сериалы</h2>
+        
+        <div class="pure-g">
+            <!-- Series 1 - Рокки -->
+            <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-4" style="padding: 0.9rem; width: 20%;">
+                <a href="#movie" style="text-decoration: none; display: block; height: 100%;">
+                    <div style="background: black; border-radius: 8px; overflow: hidden; height: 100%; cursor: pointer; transition: transform 0.3s; display: flex; flex-direction: column; width: 100%;">
+                        <div style="background: #333; height: 220px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <img src="assets/img/film-card-image-2-7@2x.png" alt="Рокки" style="width: 100%; height: 220px; object-fit: cover;">
+                        </div>
+                        <div style="padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;">
+                            <h3 style="margin: 0 0 0.5rem; font-size: 1.1rem; text-align: center; color: white; flex-grow: 1;">Рокки</h3>
+                            <div style="font-size: 0.9rem; text-align: center; color: gold; margin-top: auto;">
+                                7/10 ★
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Series 2 - Рокки -->
+            <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-4" style="padding: 0.9rem; width: 20%;">
+                <a href="#movie" style="text-decoration: none; display: block; height: 100%;">
+                    <div style="background: black; border-radius: 8px; overflow: hidden; height: 100%; cursor: pointer; transition: transform 0.3s; display: flex; flex-direction: column; width: 100%;">
+                        <div style="background: #333; height: 220px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <img src="assets/img/film-card-image-2-7@2x.png" alt="Рокки" style="width: 100%; height: 220px; object-fit: cover;">
+                        </div>
+                        <div style="padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;">
+                            <h3 style="margin: 0 0 0.5rem; font-size: 1.1rem; text-align: center; color: white; flex-grow: 1;">Рокки</h3>
+                            <div style="font-size: 0.9rem; text-align: center; color: gold; margin-top: auto;">
+                                7/10 ★
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Series 3 - Рокки -->
+            <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-4" style="padding: 0.9rem; width: 20%;">
+                <a href="#movie" style="text-decoration: none; display: block; height: 100%;">
+                    <div style="background: black; border-radius: 8px; overflow: hidden; height: 100%; cursor: pointer; transition: transform 0.3s; display: flex; flex-direction: column; width: 100%;">
+                        <div style="background: #333; height: 220px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <img src="assets/img/film-card-image-2-7@2x.png" alt="Рокки" style="width: 100%; height: 220px; object-fit: cover;">
+                        </div>
+                        <div style="padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;">
+                            <h3 style="margin: 0 0 0.5rem; font-size: 1.1rem; text-align: center; color: white; flex-grow: 1;">Рокки</h3>
+                            <div style="font-size: 0.9rem; text-align: center; color: gold; margin-top: auto;">
+                                7/10 ★
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Series 4 - Рокки -->
+            <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-4" style="padding: 0.9rem; width: 20%;">
+                <a href="#movie" style="text-decoration: none; display: block; height: 100%;">
+                    <div style="background: black; border-radius: 8px; overflow: hidden; height: 100%; cursor: pointer; transition: transform 0.3s; display: flex; flex-direction: column; width: 100%;">
+                        <div style="background: #333; height: 220px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <img src="assets/img/film-card-image-2-7@2x.png" alt="Рокки" style="width: 100%; height: 220px; object-fit: cover;">
+                        </div>
+                        <div style="padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;">
+                            <h3 style="margin: 0 0 0.5rem; font-size: 1.1rem; text-align: center; color: white; flex-grow: 1;">Рокки</h3>
+                            <div style="font-size: 0.9rem; text-align: center; color: gold; margin-top: auto;">
+                                7/10 ★
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Actors (4 узкие карточки в ряд) -->
+    <div style="margin-bottom: 4rem;">
+        <h2 style="border-bottom: 2px solid #666; padding-bottom: 0.5rem; margin-bottom: 1.5rem; font-size: 1.8rem;">Восходящие звезды</h2>
+        
+        <div class="pure-g">
+            <!-- Actor 1 - Шварценеггер -->
+            <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-4" style="padding: 0.9rem; width: 20%;">
+                <a href="#actor" style="text-decoration: none; display: block; height: 100%;">
+                    <div style="text-align: center; cursor: pointer; transition: transform 0.3s; height: 100%;">
+                        <img src="assets/img/actor-image-3@2x.png" alt="Арнольд Шварценеггер" style="width: 140px; height: 140px;">
+                        <div style="padding: 0 0.5rem;">
+                            <div style="font-size: 1.2rem; font-weight: bold; color: white;">Арнольд</div>
+                            <div style="font-size: 1.2rem; font-weight: bold; color: #ffffff;">Шварценеггер</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Actor 2 - Шварценеггер -->
+            <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-4" style="padding: 0.9rem; width: 20%;">
+                <a href="#actor" style="text-decoration: none; display: block; height: 100%;">
+                    <div style="text-align: center; cursor: pointer; transition: transform 0.3s; height: 100%;">
+                        <img src="assets/img/actor-image-3@2x.png" alt="Арнольд Шварценеггер" style="width: 140px; height: 140px;">
+                        <div style="padding: 0 0.5rem;">
+                            <div style="font-size: 1.2rem; font-weight: bold; color: white;">Арнольд</div>
+                            <div style="font-size: 1.2rem; font-weight: bold; color: #ffffff;">Шварценеггер</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Actor 3 - Шварценеггер -->
+            <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-4" style="padding: 0.9rem; width: 20%;">
+                <a href="#actor" style="text-decoration: none; display: block; height: 100%;">
+                    <div style="text-align: center; cursor: pointer; transition: transform 0.3s; height: 100%;">
+                        <img src="assets/img/actor-image-3@2x.png" alt="Арнольд Шварценеггер" style="width: 140px; height: 140px;">
+                        <div style="padding: 0 0.5rem;">
+                            <div style="font-size: 1.2rem; font-weight: bold; color: white;">Арнольд</div>
+                            <div style="font-size: 1.2rem; font-weight: bold; color: #ffffff;">Шварценеггер</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Actor 4 - Шварценеггер -->
+            <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-4" style="padding: 0.9rem; width: 20%;">
+                <a href="#actor" style="text-decoration: none; display: block; height: 100%;">
+                    <div style="text-align: center; cursor: pointer; transition: transform 0.3s; height: 100%;">
+                        <img src="assets/img/actor-image-3@2x.png" alt="Арнольд Шварценеггер" style="width: 140px; height: 140px;">
+                        <div style="padding: 0 0.5rem;">
+                            <div style="font-size: 1.2rem; font-weight: bold; color: white;">Арнольд</div>
+                            <div style="font-size: 1.2rem; font-weight: bold; color: #ffffff;">Шварценеггер</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<div style="background: black; padding: 3rem 0; margin-top: 3rem;">
+    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+        <!-- Social Links -->
+        <div style="margin-bottom: 2rem;">
+            <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                <a href="#social" class="pure-button" style="background: #333; color: white; border-radius: 50%; width: 50px; height: 50px; text-decoration: none; display: flex; align-items: center; justify-content: center;">Max</a>
+                <a href="#social" class="pure-button" style="background: #333; color: white; border-radius: 50%; width: 50px; height: 50px; text-decoration: none; display: flex; align-items: center; justify-content: center;">VK</a>
+                <a href="#social" class="pure-button" style="background: #333; color: white; border-radius: 50%; width: 50px; height: 50px; text-decoration: none; display: flex; align-items: center; justify-content: center;">DZEN</a>
+                <a href="#social" class="pure-button" style="background: #333; color: white; border-radius: 50%; width: 50px; height: 50px; text-decoration: none; display: flex; align-items: center; justify-content: center;">YT</a>
+            </div>
+        </div>
+        
+        <!-- Footer Links -->
+        <div style="margin-bottom: 2rem;">
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <a href="#social" style="color: white; text-decoration: none; font-weight: bold;">Пользовательское соглашение</a>
+                <a href="#social" style="color: white; text-decoration: none; font-weight: bold;">О нас</a>
+                <a href="#social" style="color: white; text-decoration: none; font-weight: bold;">Политика конфиденциальности</a>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div style="color: #888; font-size: 0.9rem;">
+            © 2024 СмотриКино. Все права защищены. 16+
+        </div>
+    </div>
+</div>
+
+<script>
+    // Добавляем hover эффекты для кликабельных элементов
+    document.addEventListener('DOMContentLoaded', function() {
+        // Для карточек новостей и фильмов
+        const clickableCards = document.querySelectorAll('a[href="#movie"] > div');
+        clickableCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Обработчик клика для всех ссылок
+        document.querySelectorAll('a[href="#movie"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = this.querySelector('h3, h2') || this;
+                const title = target.textContent || target.innerText;
+                alert(`Переход к детальной информации: ${title}`);
+            });
+        });
+    });
+</script>
+
+</body>
 </html>
