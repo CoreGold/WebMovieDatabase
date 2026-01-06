@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const faqItems = document.querySelectorAll('.faq-item');
   const closedHeight = 118;
   const openHeight = 329;
-  const gap = 93; // расстояние между блоками
+  const gap = 93;
   
   function updatePositions() {
-    let currentTop = 470; // начальная позиция первого блока
+    let currentTop = 470;
     
     faqItems.forEach((item, index) => {
       item.style.top = currentTop + 'px';
@@ -24,26 +24,22 @@ document.addEventListener('DOMContentLoaded', function() {
     header.addEventListener('click', function() {
       const isActive = item.classList.contains('active');
       
-      // Закрываем все остальные элементы
       faqItems.forEach(otherItem => {
         if (otherItem !== item) {
           otherItem.classList.remove('active');
         }
       });
       
-      // Переключаем текущий элемент
       if (isActive) {
         item.classList.remove('active');
       } else {
         item.classList.add('active');
       }
       
-      // Обновляем позиции всех блоков
       updatePositions();
     });
   });
   
-  // Открываем первый элемент по умолчанию
   if (faqItems.length > 0) {
     faqItems[0].classList.add('active');
     updatePositions();

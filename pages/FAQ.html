@@ -3,67 +3,179 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
+    <meta name="description" content="СмотриКино - онлайн кинотеатр с фильмами, сериалами и новостями кино" />
     <title>СмотриКино - Часто задаваемые вопросы</title>
     <link rel="stylesheet" href="../styles/FAQ.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
+    <link rel="stylesheet" href="../styles/header-footer.css" />
 </head>
 <body>
-    <script src="../scripts/FAQ.js"></script>
-    <main class="FAQ" data-model-id="65:300">
-        <section class="page-title">
-            <h1 class="category-title">ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h1>
-            <div class="film-card-container" role="presentation"></div>
-        </section>
-        <section class="faq-list">
-            <div class="faq-item question-opened">
-                <div class="faq-header">
-                    <div class="question-background-2"></div>
-                    <h2 class="p">Умер ли Райан Гослинг в конце драйва?</h2>
-                    <img class="question-arrow-close" src="https://c.animaapp.com/NDKJWamO/img/question-arrow-close.svg" alt="" />
-                    <img class="question-open-border" src="https://c.animaapp.com/NDKJWamO/img/question-open-border.svg" alt="" />
+    <div class="frame">
+        <script src="../scripts/FAQ.js"></script>
+
+        <header class="header">
+            <div class="pure-g header-content">
+                <div class="pure-u-1 pure-u-md-1-4">
+                    <h1 class="title">
+                        <a href="/" class="logo-link">
+                            <span class="title-text">СМОТРИ</span>
+                            <img
+                                class="movie-clapper-open"
+                                src="../assets/img/movie-clapper-open-1@2x.png"
+                                alt=""
+                                aria-hidden="true"
+                            />
+                            <span class="title-text">КИНО</span>
+                        </a>
+                    </h1>
                 </div>
-                <div class="faq-content">
-                    <p class="question-answer">
-                    Умер ли Райан Гослинг в конце драйва? Умер ли Райан Гослинг в конце драйва? Умер ли Райан Гослинг в конце драйва? Умер ли Райан Гослинг в конце драйва? Умер ли Райан Гослинг в конце драйва? Умер ли Райан Гослинг в конце драйва? Умер ли Райан Гослинг в конце драйва?
-                    </p>
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <form class="pure-form search-bar" role="search">
+                        <label for="search-input" class="visually-hidden">Поиск</label>
+                        <input
+                            type="search"
+                            id="search-input"
+                            class="search-input"
+                            placeholder="Поиск..."
+                            aria-label="Поиск фильмов и сериалов"
+                        />
+                        <button type="submit" class="pure-button search-button" aria-label="Искать">
+                            <img class="loopa" src="../assets/img/loopa-1@2x.png" alt="" aria-hidden="true" />
+                        </button>
+                    </form>
                 </div>
-            </div>
-            <div class="faq-item question-closed">
-                <div class="faq-header">
-                    <div class="question-background"></div>
-                    <h2 class="question-title">Как создать аккаунт на сайте?</h2>
-                    <img class="question-arrow-open" src="https://c.animaapp.com/NDKJWamO/img/question-arrow-open.svg" alt="" />
-                </div>
-                <div class="faq-content">
-                    <p class="question-answer">
-                    Для создания аккаунта нажмите кнопку "ВОЙТИ" в правом верхнем углу, затем выберите "Регистрация". Заполните необходимые поля и подтвердите email.
-                    </p>
-                </div>
-            </div>
-            <div class="faq-item question-closed-2">
-                <div class="faq-header">
-                    <div class="question-background"></div>
-                    <h2 class="question-title">Как найти нужный фильм?</h2>
-                    <img class="question-arrow-open" src="https://c.animaapp.com/NDKJWamO/img/question-arrow-open-2.svg" alt="" />
-                </div>
-                <div class="faq-content">
-                    <p class="question-answer">
-                    Используйте строку поиска в верхней части страницы. Вы можете искать по названию фильма, имени актера или режиссера. Также доступны фильтры по жанрам и годам.
-                    </p>
-                </div>
-            </div>
-            <div class="faq-item question-closed-3">
-                <div class="faq-header">
-                    <div class="question-background"></div>
-                    <h2 class="question-title">Как добавить фильм в избранное?</h2>
-                    <img class="question-arrow-open" src="https://c.animaapp.com/NDKJWamO/img/question-arrow-open-2.svg" alt="" />
-                </div>
-                <div class="faq-content">
-                    <p class="question-answer">
-                    Откройте страницу фильма и нажмите на иконку сердца. Все избранные фильмы будут доступны в вашем профиле в разделе "Избранное".
-                    </p>
+                <div class="pure-u-1 pure-u-md-1-5">
+                    <div class="account">
+                        <a href="404.html" class="account-link" aria-label="Войти в аккаунт">
+                            <img
+                                class="human-icon"
+                                src="../assets/img/human-icon@2x.png"
+                                alt=""
+                                aria-hidden="true"
+                            />
+                            <span class="account-text">ВОЙТИ</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </section>
-    </main>
+            
+            <nav class="pure-menu pure-menu-horizontal navbar" aria-label="Основная навигация">
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item"><a href="404.html" class="pure-menu-link">ФИЛЬМЫ</a></li>
+                    <li class="pure-menu-item"><a href="404.html" class="pure-menu-link">СЕРИАЛЫ</a></li>
+                    <li class="pure-menu-item"><a href="404.html" class="pure-menu-link">АКТЕРЫ</a></li>
+                    <li class="pure-menu-item"><a href="404.html" class="pure-menu-link">СОБЫТИЯ</a></li>
+                    <li class="pure-menu-item"><a href="404.html" class="pure-menu-link">НОВОСТИ</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="pure-g">
+            <div class="pure-u-1">
+                <div class="FAQ">
+                    <section class="page-title">
+                        <h1 class="category-title">ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h1>
+                        <div class="film-card-container" role="presentation"></div>
+                    </section>
+                    <section class="faq-list pure-g">
+                        <!-- FAQ 1 -->
+                        <div class="pure-u-1 faq-item question-closed">
+                            <div class="faq-header">
+                                <div class="question-background"></div>
+                                <h2 class="question-title">Как создать аккаунт на сайте?</h2>
+                                <img class="question-arrow-open" src="../assets/img/question-arrow-open.png" alt="" />
+                                <img class="question-arrow-close" src="../assets/img/question-arrow-close.png" alt="" />
+                                <img class="question-open-border" src="../assets/img/question-open-border.png" alt="" />
+                            </div>
+                            <div class="faq-content">
+                                <p class="question-answer">
+                                    Для создания аккаунта нажмите кнопку "ВОЙТИ" в правом верхнем углу, затем выберите "Регистрация". Заполните необходимые поля и подтвердите вашу электронную почту.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- FAQ 2 -->
+                        <div class="pure-u-1 faq-item question-closed">
+                            <div class="faq-header">
+                                <div class="question-background"></div>
+                                <h2 class="question-title">Как создать аккаунт на сайте?</h2>
+                                <img class="question-arrow-open" src="../assets/img/question-arrow-open.png" alt="" />
+                                <img class="question-arrow-close" src="../assets/img/question-arrow-close.png" alt="" />
+                                <img class="question-open-border" src="../assets/img/question-open-border.png" alt="" />
+                            </div>
+                            <div class="faq-content">
+                                <p class="question-answer">
+                                    Для создания аккаунта нажмите кнопку "ВОЙТИ" в правом верхнем углу, затем выберите "Регистрация". Заполните необходимые поля и подтвердите вашу электронную почту.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- FAQ 3 -->
+                        <div class="pure-u-1 faq-item question-closed">
+                            <div class="faq-header">
+                                <div class="question-background"></div>
+                                <h2 class="question-title">Как создать аккаунт на сайте?</h2>
+                                <img class="question-arrow-open" src="../assets/img/question-arrow-open.png" alt="" />
+                                <img class="question-arrow-close" src="../assets/img/question-arrow-close.png" alt="" />
+                                <img class="question-open-border" src="../assets/img/question-open-border.png" alt="" />
+                            </div>
+                            <div class="faq-content">
+                                <p class="question-answer">
+                                    Для создания аккаунта нажмите кнопку "ВОЙТИ" в правом верхнем углу, затем выберите "Регистрация". Заполните необходимые поля и подтвердите вашу электронную почту.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- FAQ 4 -->
+                        <div class="pure-u-1 faq-item question-closed">
+                            <div class="faq-header">
+                                <div class="question-background"></div>
+                                <h2 class="question-title">Как создать аккаунт на сайте?</h2>
+                                <img class="question-arrow-open" src="../assets/img/question-arrow-open.png" alt="" />
+                                <img class="question-arrow-close" src="../assets/img/question-arrow-close.png" alt="" />
+                                <img class="question-open-border" src="../assets/img/question-open-border.png" alt="" />
+                            </div>
+                            <div class="faq-content">
+                                <p class="question-answer">
+                                    Для создания аккаунта нажмите кнопку "ВОЙТИ" в правом верхнем углу, затем выберите "Регистрация". Заполните необходимые поля и подтвердите вашу электронную почту.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="pure-g footer-content">
+                <div class="pure-u-1">
+                    <div class="social-links" role="list" aria-label="Социальные сети">
+                        <a href="404.html" class="social-link" role="listitem" aria-label="Социальная сеть 1">
+                            <img class="social-icon" src="../assets/img/social-icon-4@2x.png" alt="" />
+                        </a>
+                        <a href="404.html" class="social-link" role="listitem" aria-label="Социальная сеть 2">
+                            <img class="social-icon" src="../assets/img/social-icon-4@2x.png" alt="" />
+                        </a>
+                        <a href="404.html" class="social-link" role="listitem" aria-label="Социальная сеть 3">
+                            <img class="social-icon" src="../assets/img/social-icon-4@2x.png" alt="" />
+                        </a>
+                        <a href="404.html" class="social-link" role="listitem" aria-label="Социальная сеть 4">
+                            <img class="social-icon" src="../assets/img/social-icon-4@2x.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="pure-u-1">
+                    <nav class="footer-nav" aria-label="Дополнительная информация">
+                        <a href="404.html" class="footer-link">FAQ</a>
+                        <a href="404.html" class="footer-link">Пользовательское соглашение</a>
+                        <a href="404.html" class="footer-link">О нас</a>
+                        <a href="404.html" class="footer-link">Политика конфиденциальности</a>
+                        <a href="404.html" class="footer-link">Контакты</a>
+                    </nav>
+                </div>
+                <div class="pure-u-1">
+                    <p class="copyright">© 2026-2026, СмотриКино 16+</p>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
