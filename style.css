@@ -129,12 +129,18 @@ a {
   width: 100%;
   height: 49px;
   background-color: #d9d9d9;
-  border-radius: 35px;
-  border: none;
   padding: 0 60px 0 20px;
   font-family: "Roboto", Helvetica;
   font-size: 16px;
   color: #000000;
+}
+
+.pure-form input[type=search]{
+  border-radius: 35px;
+}
+
+.pure-form input[type=search]:focus{
+  border-color: #ffffff;
 }
 
 .search-input::placeholder {
@@ -143,12 +149,11 @@ a {
 
 .search-button {
   position: absolute;
-  top: 7px;
-  right: 10px;
+  right: 0px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding: auto 0px;
   transition: opacity 0.2s ease;
 }
 
@@ -263,7 +268,7 @@ main {
   width: 100%;
   height: 5px;
   background-color: #d9d9d9;
-  margin: 20px 0;
+  margin: 20px auto;
 }
 
 /* Карточки новостей */
