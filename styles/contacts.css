@@ -1,0 +1,258 @@
+/* Section Header */
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.section-title {
+  font-family: "Galindo", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 48px;
+  text-align: center;
+  letter-spacing: 1.44px;
+  margin-bottom: 8px;
+}
+
+.title-underline {
+  width: 1447px;
+  height: 5px;
+  background-color: #d9d9d9;
+}
+
+/* Contact Information Section */
+.contact-info-section {
+  margin-bottom: 150px;
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-category {
+  margin: 20px auto;
+  font-family: "Galindo", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 46px;
+  text-align: center;
+  letter-spacing: 1.38px;
+}
+
+.contact-phone {
+  margin: 0px auto;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 2.8px;
+}
+
+/* Contact Form Section */
+.contact-form-section {
+  position: relative;
+  padding: 0 159px;
+}
+
+.form-container {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  padding: 20px 31px 48px;
+  max-width: 1500px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+
+.contact-form {
+  position: relative;
+  z-index: 2;
+}
+
+.form-row {
+  display: flex;
+  gap: 19px;
+  margin-bottom: 37px;
+}
+
+.name-fields {
+  margin-bottom: 37px;
+}
+
+.name-fields .form-group:nth-child(1) {
+  flex: 0 0 290px;
+}
+
+.name-fields .form-group:nth-child(2) {
+  flex: 0 0 323px;
+}
+
+.name-fields .form-group:nth-child(3) {
+  flex: 0 0 354px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-group.full-width {
+  margin-bottom: 37px;
+}
+
+.field-label {
+  font-family: "Galindo", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 36px;
+  letter-spacing: 1.08px;
+}
+
+.form-input,
+.form-textarea {
+  background-color: #d9d9d9;
+  border: 3px solid #000000;
+  border-radius: 8px;
+  padding: 12px 15px;
+  font-family: "Galindo", Helvetica;
+  font-weight: 400;
+  font-size: 32px;
+  letter-spacing: 0.96px;
+  color: #000000;
+}
+
+.form-input {
+  height: 53px;
+}
+
+.name-fields .form-input {
+  font-size: 32px;
+  max-width: 323px;
+}
+
+.form-group.full-width .form-input {
+  max-width: 1008px;
+}
+
+.form-textarea {
+  max-width: 1505px;
+  min-height: 294px;
+  resize: vertical;
+  font-family: "Roboto", Helvetica;
+  font-size: 32px;
+  letter-spacing: 0.96px;
+  line-height: 1.4;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 54px;
+}
+
+.consent-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  cursor: pointer;
+  max-width: 550px;
+}
+
+.consent-checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox-custom {
+  width: 58px;
+  height: 58px;
+  background-color: #000000;
+  border: 4px solid #ffffff;
+  border-radius: 6px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.consent-checkbox input[type="checkbox"]:checked + .checkbox-custom::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.consent-text {
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 32px;
+  letter-spacing: 0.96px;
+  line-height: 1.3;
+}
+
+.submit-button {
+  position: relative;
+  width: 400px;
+  height: 97px;
+  background-color: #000000;
+  border: 5px solid #ffffff;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.submit-button:hover {
+  transform: scale(1.02);
+}
+
+.button-text {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  font-family: "Galindo", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 40px;
+  letter-spacing: 1.2px;
+}
+
+.button-arrow {
+  position: absolute;
+  right: 33px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 66px;
+}
+
+.form-illustration {
+  position: absolute;
+  top: 30px;
+  right: 25px;
+  width: 500px;
+  height: 435px;
+  object-fit: cover;
+  z-index: 1;
+}

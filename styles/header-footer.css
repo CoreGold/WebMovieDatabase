@@ -107,7 +107,7 @@ body::before {
   background-color: #d9d9d9;
   padding: 0 60px 0 20px;
   font-family: "Roboto", Helvetica;
-  font-size: 16px;
+  font-size: 23px;
   color: #000000;
 }
 
@@ -201,6 +201,7 @@ body::before {
 .human-icon {
   width: 76px;
   height: 76px;
+  margin-bottom: 23px;
   object-fit: cover;
 }
 

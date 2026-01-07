@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   if (faqItems.length > 0) {
-    faqItems[0].classList.add('active');
+    //faqItems[0].classList.add('active');
     updatePositions();
   }
 });
