@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>СмотриКино - {{ series.title_ru }}</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/img/movie-clapper-open-1@2x.png') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/header-footer.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/film.css') }}" />
+</head>
+<body>
+<div class="frame">
+    <header class="header">
+        <div class="pure-g header-content">
+            <div class="pure-u-1 pure-u-md-1-4">
+                <h1 class="title">
+                    <a href="{{ url_for('index') }}" class="logo-link">
+                        <span class="title-text">СМОТРИ</span>
+                        <img class="movie-clapper-open" src="{{ url_for('static', filename='assets/img/movie-clapper-open-1@2x.png') }}" alt="" aria-hidden="true" />
+                        <span class="title-text">КИНО</span>
+                    </a>
+                </h1>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-2">
+                <form class="pure-form search-bar" role="search" action="{{ url_for('search') }}" method="get">
+                    <label for="search-input" class="visually-hidden">Поиск</label>
+                    <input type="search" id="search-input" class="search-input" name="q" placeholder="Поиск..." aria-label="Поиск фильмов и сериалов" />
+                    <button type="submit" class="pure-button search-button" aria-label="Искать">
+                        <img class="loopa" src="{{ url_for('static', filename='assets/img/loopa-1@2x.png') }}" alt="" aria-hidden="true" />
+                    </button>
+                </form>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-5">
+                <div class="account">
+                    {% if user %}
+                        <a href="{{ url_for('profile') }}" class="account-link" aria-label="Профиль">
+                            <img class="human-icon" src="{{ url_for('static', filename='assets/img/' + user.photo_url) }}" alt="" aria-hidden="true" />
+                            <span class="account-text">{{ user.full_name }}</span>
+                        </a>
+
+                    {% else %}
+                        <a href="{{ url_for('login') }}" class="account-link" aria-label="Войти в аккаунт">
+                            <img class="human-icon" src="{{ url_for('static', filename='assets/img/human-icon@2x.png') }}" alt="" aria-hidden="true" />
+                            <span class="account-text">ВОЙТИ</span>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <nav class="pure-menu pure-menu-horizontal navbar" aria-label="Основная навигация">
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="{{ url_for('movies_list') }}" class="pure-menu-link">ФИЛЬМЫ</a></li>
+                <li class="pure-menu-item"><a href="{{ url_for('series_list') }}" class="pure-menu-link">СЕРИАЛЫ</a></li>
+                <li class="pure-menu-item"><a href="{{ url_for('actors_list') }}" class="pure-menu-link">АКТЕРЫ</a></li>
+                <li class="pure-menu-item"><a href="{{ url_for('events_list') }}" class="pure-menu-link">СОБЫТИЯ</a></li>
+                <li class="pure-menu-item"><a href="{{ url_for('news_list') }}" class="pure-menu-link">НОВОСТИ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-content">
+        <div class="main-block">
+            <section class="main-info">
+                <div class="pure-g">
+                    <div class="pure-u-5-8">
+                        <p class="mainfilm-title">{{ series.title_ru.upper() }} ({{ series.year_start }}{% if series.year_end %}-{{ series.year_end }}{% endif %})</p>
+                        <div class="pure-g">
+                            <div class="mainfilm-info-grid">
+                                <div class="mainfilm-info-block">{{ series.title_en or '' }}</div>
+                                <div class="mainfilm-info-block">~ {{ series.duration or '1' }} ч.</div>
+                                <div class="mainfilm-info-block">{{ series.seasons }} сезонов</div>
+                                <div class="mainfilm-info-block">{{ series.age_rating or '16+' }}</div>
+                            </div>
+                            <p class="description">{{ series.description }}</p>
+                            <div class="flexcontainer">
+                                <p class="text">Режиссёр: {{ series.director or '' }}</p>
+                                <p class="text">Сценарий: {{ series.screenplay or '' }}</p>
+                                <p class="text">Продюсер: {{ series.producer or '' }}</p>
+                                <p class="text">Композитор: {{ series.composer or '' }}</p>
+                            </div>
+                            <div class="tags">
+                                <div class="tags-title">Теги</div>
+                                <div class="tags-grid">
+                                    {% for tag in series.tags %}
+                                    <a href="{{ url_for('search') }}?q={{ tag.name }}" class="tag-button" style="text-decoration: none;">{{ tag.name }}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pure-u-3-8">
+                        <div class="mainfilm-card">
+                            <img class="mainfilm-image" src="{{ url_for('static', filename='assets/img/' + series.media.poster_url) }}" />
+                            <button class="bookmark-toggle" type="button" aria-label="Bookmark" aria-pressed="false">
+                                <img class="bookmark-icon" src="{{ url_for('static', filename='assets/img/bookmark.png') }}" alt="Bookmark" />
+                            </button>
+                        </div>
+                        <div class="rating">
+                            <div class="rating-text">Ваша оценка</div>
+                            <div class="film-raiting">{{ "%.1f"|format(series.rating_avg or 0) }}</div>
+                            <img class="start-icon" src="{{ url_for('static', filename='assets/img/star-icon.png') }}" />
+                            <div class="rating-stars" id="ratingStars">
+                                {% for i in range(1, 11) %}
+                                <span class="star" data-value="{{ i }}">&#9733;</span>
+                                {% endfor %}
+                            </div>
+                            <div class="rating-border"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="media">
+                <video class="trailer" src="{{ url_for('static', filename='assets/mp4/' + series.media.trailer_url) }}" poster="{{ url_for('static', filename='assets/img/' + series.media.trailer_preview_url) }}" controls></video>
+                <img class="movie-image-1" src="{{ url_for('static', filename='assets/img/' + series.media.photo_1_url) }}" />
+                <img class="movie-image-2" src="{{ url_for('static', filename='assets/img/' + series.media.photo_2_url) }}" />
+                <img class="movie-image-3" src="{{ url_for('static', filename='assets/img/' + series.media.photo_3_url) }}" />
+                <img class="movie-image-4" src="{{ url_for('static', filename='assets/img/' + series.media.photo_4_url) }}" />
+                <img class="movie-image-5" src="{{ url_for('static', filename='assets/img/' + series.media.photo_5_url) }}" />
+            </section>
+
+            
+            {% if series.actors %}
+            <section class="actors-section" aria-labelledby="actors-title">
+                <h2 class="section-title" id="actors-title">
+                    {% if series.actors|length > 4 %}
+                    <a href="{{ url_for('series_actors_all', slug=series.slug) }}">В главных ролях</a>
+                    <a href="{{ url_for('series_actors_all', slug=series.slug) }}">
+                        <img class="section-more" src="{{ url_for('static', filename='assets/img/question-arrow-right.png') }}" />
+                    </a>
+                    {% else %}
+                    <a>В главных ролях</a>
+                    {% endif %}
+                </h2>
+                <div class="pure-g actors-grid">
+                    {% for actor in series.actors[:4] %}
+                    <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-4">
+                        <article class="actor-card">
+                            <a href="{{ url_for('actor_detail', slug=actor.slug) }}" class="actor-link">
+                                <img class="actor-image" src="{{ url_for('static', filename='assets/img/' + actor.small_photo_url) }}" alt="{{ actor.name }} {{ actor.surname }}" />
+                                <div class="actor-info">
+                                    <span class="actor-name">{{ actor.name }}</span>
+                                    <span class="actor-surname">{{ actor.surname }}</span>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="section-divider"></div>
+            </section>
+            {% endif  %}
+
+            {% if connected %}
+            <section class="films-section" aria-labelledby="connected">
+                <h2 class="section-title" id="connected-title">
+                    {% if connected|length > 4 %}
+                    <a href="{{ url_for('series_connected_all', slug=series.slug) }}">Связанное</a>
+                    <a href="{{ url_for('series_connected_all', slug=series.slug) }}">
+                        <img class="section-more" src="{{ url_for('static', filename='assets/img/question-arrow-right.png') }}" />
+                    </a>
+                    {% else %}
+                    <a>Связанное</a>
+                    {% endif %}
+                </h2>
+                <div class="pure-g films-grid">
+                    {% for item in connected[:4] %}
+                    <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-4">
+                        <article class="film-card">
+                            <a href="{{ url_for('movie_detail', slug=item.slug) if item.__class__.__name__ == 'Movie' else url_for('series_detail', slug=item.slug) }}" class="film-link">
+                                <img class="film-card-image" src="{{ url_for('static', filename='assets/img/' + (item.media.poster_url if item.media else 'placeholder.png')) }}" alt="{{ item.title_ru }}" />
+                                <h3 class="film-title">{{ item.title_ru }}</h3>
+                                <div class="film-info">
+                                    <span class="film-year">{{ item.year if item.__class__.__name__ == 'Movie' else (item.year_start|string + '-' + item.year_end|string if item.year_end else item.year_start|string) }}</span>
+                                    <div class="film-rating">
+                                        <span class="film-rating-value">{{ "%.1f"|format(item.rating_avg or 0) }}</span>
+                                        <img class="star-icon" src="{{ url_for('static', filename='assets/img/star-icon.png') }}" aria-hidden="true" />
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="section-divider"></div>
+            </section>
+            {% endif  %}
+
+            {% if similar %}
+            <section class="films-section" aria-labelledby="similar">
+                <h2 class="section-title" id="similar-title">
+                    {% if similar|length > 4 %}
+                    <a href="{{ url_for('series_similar_all', slug=series.slug) }}">Похожее</a>
+                    <a href="{{ url_for('series_similar_all', slug=series.slug) }}">
+                        <img class="section-more" src="{{ url_for('static', filename='assets/img/question-arrow-right.png') }}" />
+                    </a>
+                    {% else %}
+                    <a>Похожее</a>
+                    {% endif %}
+                </h2>
+                <div class="pure-g films-grid">
+                    {% for item in similar[:4] %}
+                    <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-4">
+                        <article class="film-card">
+                            <a href="{{ url_for('movie_detail', slug=item.slug) if item.__class__.__name__ == 'Movie' else url_for('series_detail', slug=item.slug) }}" class="film-link">
+                                <img class="film-card-image" src="{{ url_for('static', filename='assets/img/' + (item.media.poster_url if item.media else 'placeholder.png')) }}" alt="{{ item.title_ru }}" />
+                                <h3 class="film-title">{{ item.title_ru }}</h3>
+                                <div class="film-info">
+                                    <span class="film-year">{{ item.year if item.__class__.__name__ == 'Movie' else (item.year_start|string + '-' + item.year_end|string if item.year_end else item.year_start|string) }}</span>
+                                    <div class="film-rating">
+                                        <span class="film-rating-value">{{ "%.1f"|format(item.rating_avg or 0) }}</span>
+                                        <img class="star-icon" src="{{ url_for('static', filename='assets/img/star-icon.png') }}" aria-hidden="true" />
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="section-divider"></div>
+            </section>
+            {% endif  %}
+            
+            {% if grouped_awards %}
+            <section class="awards-section">
+                <h2 class="section-title">
+                    {% if grouped_awards|length > 4 %}
+                    <a href="{{ url_for('series_awards_all', slug=series.slug) }}">Награды</a>
+                    <a href="{{ url_for('series_awards_all', slug=series.slug) }}">
+                        <img class="section-more" src="{{ url_for('static', filename='assets/img/question-arrow-right.png') }}" />
+                    </a>
+                    {% else %}
+                    <a>Награды</a>
+                    {% endif %}
+                </h2>
+                <div class="pure-g">
+                    {% for group in grouped_awards[:4] %}
+                    <div class="pure-u-1-2">
+                        <div class="award-block">
+                            <a href="{{ url_for('event_detail', slug=group.event.slug) }}" class="award-link">
+                                <img class="award-image" src="{{ url_for('static', filename='assets/img/' + (group.event.awards[0].image_url if group.event.awards else 'placeholder.png')) }}" />
+                                <span class="award-name">{{ group.event.title_ru }}</span>
+                                <p class="award-description">
+                                    {% for win in group.wins %}
+                                        • {{ win }}<br>
+                                    {% endfor %}
+                                    {% for nom in group.nominations %}
+                                        • {{ nom }} (номинация)<br>
+                                    {% endfor %}
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="section-divider"></div>
+            </section>
+            {% endif  %}
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="pure-g footer-content">
+            <div class="pure-u-1">
+                <div class="social-links" role="list" aria-label="Социальные сети">
+                    <a href="#" class="social-link" role="listitem" aria-label="Социальная сеть 1">
+                        <img class="social-icon" src="{{ url_for('static', filename='assets/img/social-icon-4@2x.png') }}" alt="" />
+                    </a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Социальная сеть 2">
+                        <img class="social-icon" src="{{ url_for('static', filename='assets/img/social-icon-4@2x.png') }}" alt="" />
+                    </a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Социальная сеть 3">
+                        <img class="social-icon" src="{{ url_for('static', filename='assets/img/social-icon-4@2x.png') }}" alt="" />
+                    </a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Социальная сеть 4">
+                        <img class="social-icon" src="{{ url_for('static', filename='assets/img/social-icon-4@2x.png') }}" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div class="pure-u-1">
+                <nav class="footer-nav" aria-label="Дополнительная информация">
+                    <a href="{{ url_for('faq') }}" class="footer-link">FAQ</a>
+                    <a href="#" class="footer-link">Пользовательское соглашение</a>
+                    <a href="#" class="footer-link">О нас</a>
+                    <a href="#" class="footer-link">Политика конфиденциальности</a>
+                    <a href="{{ url_for('contacts') }}" class="footer-link">Контакты</a>
+                </nav>
+            </div>
+            <div class="pure-u-1">
+                <p class="copyright">© 2026-2026, СмотриКино 16+</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script>
+(function() {
+    // Сохранение оценки на сервере (ТОЛЬКО для зарегистрированных пользователей)
+    const KEY = 'userRating_{{ movie.id if movie is defined else series.id }}';
+    const TYPE = '{{ "movie" if movie is defined else "series" }}';
+    const ID = {{ movie.id if movie is defined else series.id }};
+    const IS_AUTH = {{ 'true' if user else 'false' }};
+
+    let saved = localStorage.getItem(KEY);
+    const apply = v => document.querySelectorAll('#ratingStars .star').forEach(s => s.classList.toggle('active', parseInt(s.dataset.value) <= v));
+
+    async function saveRating(value) {
+        if (!IS_AUTH) {
+            alert('Для оценки необходимо войти в аккаунт!');
+            return;
+        }
+
+        try {
+            const response = await fetch('/rate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    type: TYPE,
+                    id: ID,
+                    rating: value
+                })
+            });
+            const data = await response.json();
+            if (!data.success) {
+                console.error('Ошибка сохранения оценки:', data.error);
+            }
+        } catch (error) {
+            console.error('Ошибка:', error);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        let stars = document.querySelectorAll('#ratingStars .star'), current = saved ? parseInt(saved) : 0;
+        apply(current);
+        stars.forEach(s => {
+            s.addEventListener('mouseover', () => apply(parseInt(s.dataset.value)));
+            s.addEventListener('mouseout', () => apply(current));
+            s.addEventListener('click', async () => {
+                if (!IS_AUTH) {
+                    alert('Для оценки необходимо войти в аккаунт!');
+                    return;
+                }
+                current = parseInt(s.dataset.value);
+                localStorage.setItem(KEY, current);
+                apply(current);
+                await saveRating(current);
+            });
+        });
+    });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>СмотриКино - {{ event.title_ru }}</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/img/movie-clapper-open-1@2x.png') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/header-footer.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/film.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/event.css') }}" />
+</head>
+<body>
+<div class="frame">
+    <header class="header">
+        <div class="pure-g header-content">
+            <div class="pure-u-1 pure-u-md-1-4">
+                <h1 class="title">
+                    <a href="{{ url_for('index') }}" class="logo-link">
+                        <span class="title-text">СМОТРИ</span>
+                        <img class="movie-clapper-open" src="{{ url_for('static', filename='assets/img/movie-clapper-open-1@2x.png') }}" alt="" aria-hidden="true" />
+                        <span class="title-text">КИНО</span>
+                    </a>
+                </h1>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-2">
+                <form class="pure-form search-bar" role="search" action="{{ url_for('search') }}" method="get">
+                    <label for="search-input" class="visually-hidden">Поиск</label>
+                    <input type="search" id="search-input" class="search-input" name="q" placeholder="Поиск..." aria-label="Поиск фильмов и сериалов" />
+                    <button type="submit" class="pure-button search-button" aria-label="Искать">
+                        <img class="loopa" src="{{ url_for('static', filename='assets/img/loopa-1@2x.png') }}" alt="" aria-hidden="true" />
+                    </button>
+                </form>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-5">
+                <div class="account">
+                    {% if user %}
+                        <a href="{{ url_for('profile') }}" class="account-link" aria-label="Профиль">
+                            <img class="human-icon" src="{{ url_for('static', filename='assets/img/' + user.photo_url) }}" alt="" aria-hidden="true" />
+                            <span class="account-text">{{ user.full_name }}</span>
+                        </a>
+                    {% else %}
+                        <a href="{{ url_for('login') }}" class="account-link" aria-label="Войти в аккаунт">
+                            <img class="human-icon" src="{{ url_for('static', filename='assets/img/human-icon@2x.png') }}" alt="" aria-hidden="true" />
+                            <span class="account-text">ВОЙТИ</span>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <nav class="pure-menu pure-menu-horizontal navbar" aria-label="Основная навигация">
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="{{ url_for('movies_list') }}" class="pure-menu-link">ФИЛЬМЫ</a></li>
+                <li class="pure-menu-item"><a href="{{ url_for('series_list') }}" class="pure-menu-link">СЕРИАЛЫ</a></li>
+                <li class="pure-menu-item"><a href="{{ url_for('actors_list') }}" class="pure-menu-link">АКТЕРЫ</a></li>
+                <li class="pure-menu-item"><a href="{{ url_for('events_list') }}" class="pure-menu-link">СОБЫТИЯ</a></li>
+                <li class="pure-menu-item"><a href="{{ url_for('news_list') }}" class="pure-menu-link">НОВОСТИ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-content">
+        <div class="main-block">
+            <section class="main-info">
+                <p class="mainfilm-title">{{ event.title_ru.upper() }}</p>
+                <div class="mainfilm-info-grid">
+                    <div class="mainfilm-info-block">{{ event.title_en or '' }}</div>
+                </div>
+                <img class="image" src="{{ url_for('static', filename='assets/img/' + event.image_main) }}" />
+                <p class="description">{{ event.description }}</p>
+            </section>
+
+            <section class="event-photos">
+                <div class="title-3">ФОТОГРАФИИ</div>
+                <div class="photos">
+                    {% if event.photo1 %}
+                    <img class="image-2" src="{{ url_for('static', filename='assets/img/' + event.photo1) }}" />
+                    {% endif %}
+                    {% if event.photo2 %}
+                    <img class="image-3" src="{{ url_for('static', filename='assets/img/' + event.photo2) }}" />
+                    {% endif %}
+                    {% if event.photo3 %}
+                    <img class="image-4" src="{{ url_for('static', filename='assets/img/' + event.photo3) }}" />
+                    {% endif %}
+                    {% if event.photo4 %}
+                    <img class="image-5" src="{{ url_for('static', filename='assets/img/' + event.photo4) }}" />
+                    {% endif %}
+                    {% if event.photo5 %}
+                    <img class="image-6" src="{{ url_for('static', filename='assets/img/' + event.photo5) }}" />
+                    {% endif %}
+                    {% if event.photo6 %}
+                    <img class="image-7" src="{{ url_for('static', filename='assets/img/' + event.photo6) }}" />
+                    {% endif %}
+                </div>
+            </section>
+
+            <div class="nominations">
+                <div class="nominations-title">НОМИНАЦИИ</div>
+                {% for award in awards %}
+                <div class="nomination">
+                    <div class="nomination-title">{{ award.category }}</div>
+                    <div class="section-divider"></div>
+                    <div class="pure-g">
+                        
+                        <div class="pure-u-1-4">
+                            <div class="winner-card">
+                                {% set winner = award.get_winner() %}
+                                {% if winner %}
+                                <article class="film-card">
+                                    {% if award.winner_type == 'movie' %}
+                                    <a href="{{ url_for('movie_detail', slug=winner.slug) }}" class="film-link">
+                                        <img class="film-card-image" src="{{ url_for('static', filename='assets/img/' + winner.media.poster_url) }}" alt="{{ winner.title_ru }}" />
+                                        <h3 class="film-title">{{ winner.title_ru }}</h3>
+                                        <div class="film-info">
+                                            <span class="film-year">{{ winner.year }}</span>
+                                            <div class="film-rating">
+                                                <span class="film-rating-value">{{ "%.1f"|format(winner.rating_avg or 0) }}</span>
+                                                <img class="star-icon" src="{{ url_for('static', filename='assets/img/star-icon.png') }}" aria-hidden="true" />
+                                            </div>
+                                        </div>
+                                    </a>
+                                    {% elif award.winner_type == 'series' %}
+                                    <a href="{{ url_for('series_detail', slug=winner.slug) }}" class="film-link">
+                                        <img class="film-card-image" src="{{ url_for('static', filename='assets/img/' + winner.media.poster_url) }}" alt="{{ winner.title_ru }}" />
+                                        <h3 class="film-title">{{ winner.title_ru }}</h3>
+                                        <div class="film-info">
+                                            <span class="film-year">{{ winner.year_start }}{% if winner.year_end %}-{{ winner.year_end }}{% endif %}</span>
+                                            <div class="film-rating">
+                                                <span class="film-rating-value">{{ "%.1f"|format(winner.rating_avg or 0) }}</span>
+                                                <img class="star-icon" src="{{ url_for('static', filename='assets/img/star-icon.png') }}" aria-hidden="true" />
+                                            </div>
+                                        </div>
+                                    </a>
+                                    {% elif award.winner_type == 'actor' %}
+                                    <a href="{{ url_for('actor_detail', slug=winner.slug) }}" class="film-link">
+                                        <img class="film-card-image" src="{{ url_for('static', filename='assets/img/' + winner.big_photo_url) }}" alt="{{ winner.name }} {{ winner.surname }}" />
+                                        <h3 class="film-title">{{ winner.name }} {{ winner.surname }}</h3>
+                                    </a>
+                                    {% endif %}
+                                </article>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        
+                        <div class="pure-u-3-4">
+                            <div class="other-title">ДРУГИЕ НОМИНАНТЫ</div>
+                            <div class="pure-g films-grid">
+                                {% set nominees = award.get_nominees() %}
+                                {% if nominees %}
+                                    {% for nominee in nominees %}
+                                        {# Пропускаем победителя, если он есть в списке номинантов #}
+                                        {% set winner = award.get_winner() %}
+                                        {% if winner is none or nominee.id != winner.id %}
+                                        <div class="pure-u-1-5">
+                                            <div class="participant-card">
+                                                <article class="film-card">
+                                                    {% if award.winner_type == 'movie' %}
+                                                    <a href="{{ url_for('movie_detail', slug=nominee.slug) }}" class="film-link">
+                                                        <img class="film-card-image" src="{{ url_for('static', filename='assets/img/' + nominee.media.poster_url) }}" alt="{{ nominee.title_ru }}" />
+                                                        <h3 class="film-title">{{ nominee.title_ru }}</h3>
+                                                        <div class="film-info">
+                                                            <span class="film-year">{{ nominee.year }}</span>
+                                                            <div class="film-rating">
+                                                                <span class="film-rating-value">{{ "%.1f"|format(nominee.rating_avg or 0) }}</span>
+                                                                <img class="star-icon" src="{{ url_for('static', filename='assets/img/star-icon.png') }}" aria-hidden="true" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    {% elif award.winner_type == 'series' %}
+                                                    <a href="{{ url_for('series_detail', slug=nominee.slug) }}" class="film-link">
+                                                        <img class="film-card-image" src="{{ url_for('static', filename='assets/img/' + nominee.media.poster_url) }}" alt="{{ nominee.title_ru }}" />
+                                                        <h3 class="film-title">{{ nominee.title_ru }}</h3>
+                                                        <div class="film-info">
+                                                            <span class="film-year">{{ nominee.year_start }}{% if nominee.year_end %}-{{ nominee.year_end }}{% endif %}</span>
+                                                            <div class="film-rating">
+                                                                <span class="film-rating-value">{{ "%.1f"|format(nominee.rating_avg or 0) }}</span>
+                                                                <img class="star-icon" src="{{ url_for('static', filename='assets/img/star-icon.png') }}" aria-hidden="true" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    {% elif award.winner_type == 'actor' %}
+                                                    <a href="{{ url_for('actor_detail', slug=nominee.slug) }}" class="film-link">
+                                                        <img class="film-card-image" src="{{ url_for('static', filename='assets/img/' + nominee.big_photo_url) }}" alt="{{ nominee.name }} {{ nominee.surname }}" />
+                                                        <h3 class="film-title">{{ nominee.name }} {{ nominee.surname }}</h3>
+                                                    </a>
+                                                    {% endif %}
+                                                </article>
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                            <div class="section-divider"></div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="pure-g footer-content">
+            <div class="pure-u-1">
+                <div class="social-links" role="list" aria-label="Социальные сети">
+                    <a href="#" class="social-link" role="listitem" aria-label="Социальная сеть 1">
+                        <img class="social-icon" src="{{ url_for('static', filename='assets/img/social-icon-4@2x.png') }}" alt="" />
+                    </a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Социальная сеть 2">
+                        <img class="social-icon" src="{{ url_for('static', filename='assets/img/social-icon-4@2x.png') }}" alt="" />
+                    </a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Социальная сеть 3">
+                        <img class="social-icon" src="{{ url_for('static', filename='assets/img/social-icon-4@2x.png') }}" alt="" />
+                    </a>
+                    <a href="#" class="social-link" role="listitem" aria-label="Социальная сеть 4">
+                        <img class="social-icon" src="{{ url_for('static', filename='assets/img/social-icon-4@2x.png') }}" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div class="pure-u-1">
+                <nav class="footer-nav" aria-label="Дополнительная информация">
+                    <a href="{{ url_for('faq') }}" class="footer-link">FAQ</a>
+                    <a href="#" class="footer-link">Пользовательское соглашение</a>
+                    <a href="#" class="footer-link">О нас</a>
+                    <a href="#" class="footer-link">Политика конфиденциальности</a>
+                    <a href="{{ url_for('contacts') }}" class="footer-link">Контакты</a>
+                </nav>
+            </div>
+            <div class="pure-u-1">
+                <p class="copyright">© 2026-2026, СмотриКино 16+</p>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

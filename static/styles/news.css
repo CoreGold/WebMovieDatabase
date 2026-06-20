@@ -1,0 +1,79 @@
+.thumbnail {
+ margin-top: 30px;
+ width:1031px;
+}
+
+.author-block {
+  margin-top: 23px;
+  position: relative;
+  width: 85%;
+}
+
+.actor-image {
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.actor-info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+.author-title {
+  font-family: "Inter";
+  color: #ffffff;
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+.actor-name,
+.actor-surname {
+  font-family: "Inter";
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
+  line-height: normal;
+  font-size: 35px;
+}
+
+.actor-name {
+  margin-bottom: 5px;
+}
+
+.actor-description {
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 26px;
+  text-align: left;
+  letter-spacing: 0;
+  line-height: 1.25;
+  margin: 20px 0px;
+}
+
+.thumbnail-description {
+  font-family: "Inter", Helvetica;
+  width:1031px;
+  color: #ffffff;
+  font-size: 34px;
+  text-align: left;
+  letter-spacing: 0;
+  line-height: 1.3;
+  margin: 20px 0px;
+  margin-bottom: 40px;
+}
+
+.description {
+  width: 1430px;
+  font-size: 32px;
+  margin: 35px 40px;
+}
+
+.news-image {
+  width: 1430px;
+  margin: 35px 40px;
+}

@@ -1,0 +1,401 @@
+.main-block {
+  position: relative;
+  margin: 45px 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1510px;
+  display: flex;
+  flex-direction: column;
+  background-color: #00000085;
+  border-radius: 20px;
+}
+
+.main-info {
+  margin-left: 43px;
+  width: 1446px;
+  position: relative;
+  margin-top: 15.1px;
+}
+
+/* ----- Main Info ----- */
+.mainfilm-title {
+  font-family: "Inter", Helvetica;
+  font-size: 48px;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0;
+  line-height: normal;
+  margin: 15px 0px;
+}
+
+.mainfilm-info {
+  position: relative;
+}
+
+.mainfilm-info-grid {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  align-items: center;
+}
+
+.mainfilm-info-block{
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.description {
+  width: 883px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 28px;
+  text-align: justify;
+  letter-spacing: 0;
+  line-height: 1.25;
+  margin: 20px 0px;
+}
+
+.flexcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 929px;
+  margin: 0px;
+}
+
+.text {
+  font-family: "Inter", Helvetica;
+  color: #ffffff;
+  margin: 8px 0px;
+  font-size: 25px;
+}
+
+.mainfilm-card {
+  position: relative;
+  margin: 0 18px;
+  width: 510px;
+  height: 750px;
+  display: flex;
+  background-color: #000000;
+}
+
+.mainfilm-image {
+  margin-top: 17.7px;
+  width: 478.23px;
+  height: 716.99px;
+  margin-left: 16.4px;
+  aspect-ratio: 0.67;
+  object-fit: cover;
+}
+
+/* -------------------------------
+   СИСТЕМА ОЦЕНИВАНИЯ (РЕЙТИНГ)
+------------------------------- */
+.rating {
+  position: relative;
+  margin: 30px 18px;
+  width: 515px;
+  height: 222px;
+}
+
+.rating-text {
+  position: absolute;
+  top: 115px;
+  left: 1px;
+  width: 510px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.film-raiting {
+  position: absolute;
+  top: 8px;
+  left: 160px;
+  width: 111px;
+  font-family: "Doppio One", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 68px;
+  text-align: center;
+  letter-spacing: 2.04px;
+  line-height: normal;
+}
+
+.start-icon {
+  position: absolute;
+  top: 2px;
+  left: 281px;
+  width: 77px;
+  height: 73px;
+  aspect-ratio: 1;
+}
+
+.rating-stars {
+  position: absolute;
+  top: 177px;
+  left: 0;
+  width: 511px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.rating-stars .star {
+  font-size: 58px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.15s ease, transform 0.1s ease;
+  line-height: 1;
+  user-select: none;
+  -webkit-text-stroke: 1px #888;
+}
+
+.rating-stars .star.active {
+  color: #F4ED14;
+  -webkit-text-stroke: 1px #F4ED14;
+}
+
+.rating-stars .star:hover {
+  transform: scale(1.2);
+}
+
+.rating-border {
+  position: absolute;
+  top: 98px;
+  left: 1px;
+  width: 510px;
+  height: 7px;
+  background-color: #ffffff;
+}
+
+/* -------------------------------
+   ТЕГИ
+------------------------------- */
+.tags {
+  position: relative;
+  width: 883px;
+  margin: 20px 0px;
+}
+
+.tags-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 319px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.tags-grid {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.tag-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.67);
+  border: 3px solid #ffffff;
+  border-radius: 7px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 25px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tag-button:hover {
+  background-color: rgba(255, 215, 0, 0.3);
+  border-color: #ffd700;
+  transform: translateY(-2px);
+}
+
+/* -------------------------------
+   МЕДИА-БЛОК (ТРЕЙЛЕР И КАДРЫ)
+------------------------------- */
+.media {
+  position: relative;
+  margin-left: 30px;
+  width: 1436.44px;
+  height: 892.87px;
+  margin-top: 80.8px;
+  margin-bottom: 60.8px;
+}
+
+.trailer {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 1008px;
+  height: 567px;
+  display: flex;
+}
+
+.movie-image-1 {
+  position: absolute;
+  top: 601px;
+  left: 0;
+  width: 437px;
+  height: 292px;
+  aspect-ratio: 1.5;
+  object-fit: cover;
+}
+
+.movie-image-2 {
+  position: absolute;
+  top: 602px;
+  left: 986px;
+  width: 448px;
+  height: 285px;
+  aspect-ratio: 1.57;
+}
+
+.movie-image-3 {
+  position: absolute;
+  top: 0;
+  left: 1040px;
+  width: 396px;
+  height: 268px;
+  aspect-ratio: 1.48;
+}
+
+.movie-image-4 {
+  position: absolute;
+  top: 304px;
+  left: 1042px;
+  width: 395px;
+  height: 265px;
+  aspect-ratio: 1.49;
+}
+
+.movie-image-5 {
+  position: absolute;
+  top: 601px;
+  left: 472px;
+  width: 478px;
+  height: 287px;
+  aspect-ratio: 1.67;
+  object-fit: cover;
+}
+
+/* Actor Info */
+
+.text-block {
+  position: relative;
+  margin: 34px  18px;
+  width: 510px;
+}
+
+.info-table-wrap {
+  width: 510px;
+}
+
+.info-table {
+  width: 510px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.info-table td {
+  border: 4px solid #ffffff;
+  padding: 14px 12px;
+  vertical-align: top;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 23.8px;
+  letter-spacing: 0;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.info-table td:first-child {
+  width: 226px;
+}
+
+.children-list p {
+  margin: 0 0 12px 0;
+}
+
+.bookmark-toggle {
+  position: absolute;
+  top: 14px;
+  right: 30px;
+  width: 56px;
+  height: 113px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0;
+  transform: scaleY(0.08);
+  transform-origin: top center;
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+  pointer-events: none;
+}
+
+.bookmark-icon {
+  display: block;
+  width: 56px;
+  height: 113px;
+}
+
+.film-card:hover .bookmark-toggle,
+.bookmark-toggle.is-hover,
+.bookmark-toggle.is-bookmarked {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.bookmark-toggle.animate-pop {
+  animation: bookmark-pop 320ms ease;
+}
+
+@keyframes bookmark-pop {
+  0% {
+    transform: scaleY(0.08);
+  }
+  55% {
+    transform: scaleY(1.08);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.selected {
+  position: absolute;
+  top: 177px;
+  left: 860px;
+  width: 123px;
+  height: 3px;
+  background-color: #ffffff;
+}

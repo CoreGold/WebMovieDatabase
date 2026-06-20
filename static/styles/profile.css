@@ -1,0 +1,274 @@
+.mainfilm-info-grid {
+    margin-bottom: 23px;
+}
+
+.text {
+    font-size: 37px;
+    margin: 23px 0px;
+}
+
+.tags-title {
+    position: relative;
+}
+
+.tags-grid {
+    margin-top: 30px;
+    gap: 26px;
+}
+
+.tags {
+    width: 1415px;
+    margin-bottom: 30px;
+}
+
+.profile-image {
+    border: 5px solid white;
+    width: 370px;
+    height: 370px;
+    background: black;
+    border-radius: 50%;
+    display: block;
+    margin: 20px auto;
+    margin-bottom: 50px;
+}
+
+.edit-button {
+  display: inline-block;
+  padding: 15px 78px;
+  background-color: rgba(0, 0, 0, 0.67);
+  border: 5px solid #ffffff;
+  border-radius: 24px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  margin-top: 30px;
+  margin-left: 32px;
+}
+
+.logout-button:hover,
+.edit-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.tag-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.67);
+  border: 3px solid #ffffff;
+  border-radius: 7px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.films-fav-section{
+  position: relative;
+}
+
+.films-fav-section .film-card{
+    margin: 20px 30px;
+}
+
+.rating-score{
+    position: relative;
+    color: white;
+    margin: 20px 30px;
+    font-size: 35px;
+    text-align: center;
+    font-family: "Doppio One", Helvetica;
+}
+
+.rating-score-icon{
+    margin-top: 1px;
+}
+
+.mainfilm-title{
+    font-size: 50px;
+    margin-top: 33px;
+}
+
+.mainfilm-info-block{
+    font-size: 40px;
+}
+
+.editable {
+    display: none;
+    margin-top: 10px;
+}
+.editable.active {
+    display: block;
+}
+.editable input,
+.editable textarea {
+    width: 650px;
+    padding: 10px;
+    background: transparent;
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    border-radius: 5px;
+    font-family: "Inter", Helvetica;
+    font-size: inherit;
+}
+
+.editable input:focus,
+.editable textarea:focus {
+    outline: none;
+}
+
+/* Специальные стили для textarea "О себе" */
+.editable textarea {
+    resize: none;
+    overflow: hidden;
+    min-height: 80px;
+    transition: height 0.1s ease;
+}
+
+/* Селектор тегов в режиме редактирования - без фона */
+.tag-selector {
+    display: none;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.tag-selector.active {
+    display: flex;
+}
+
+/* Скрываем реальные чекбоксы */
+.tag-checkbox input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+/* Метка становится кликабельной */
+.tag-checkbox {
+    display: inline-block;
+    padding: 10px 20px;
+    background: transparent;
+    border: 3px solid #ffffff;
+    border-radius: 7px;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: "Roboto", Helvetica;
+    font-size: 28px;
+    user-select: none;
+}
+
+/* Стиль для выбранного тега */
+.tag-checkbox.active {
+    border-color: #ffd700;
+    color: #ffd700;
+}
+
+/* Ховер эффект */
+.tag-checkbox:hover {
+    border-color: #ffd700;
+    color: #ffd700;
+}
+
+/* Скрываем чекбоксы в обычном режиме */
+.editing-mode .tag-button {
+    display: none;
+}
+.editing-mode .tag-selector {
+    display: flex;
+}
+
+/* Кнопка редактирования/сохранения - без фона */
+.edit-button {
+    display: block;
+    width: 63%;
+    padding: 16px;
+    background: transparent;
+    color: #ffffff;
+    border: 5px solid #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: "Inter", Helvetica;
+    margin: 23px 100px;
+    transition: all 0.3s ease;
+}
+
+/* Стиль для кнопки "Выйти" */
+.logout-button {
+    display: block;
+    width: 63%;
+    padding: 16px;
+    background: transparent;
+    color: #ffffff;
+    border: 5px solid #ff4444;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: "Inter", Helvetica;
+    margin: 10px 100px;
+    transition: all 0.3s ease;
+}
+
+/* Стиль для загрузки фото */
+.photo-upload {
+    display: none;
+    margin-top: 15px;
+    text-align: center;
+}
+.photo-upload.active {
+    display: block;
+}
+.photo-upload label {
+    display: inline-block;
+    padding: 12px 30px;
+    background: transparent;
+    border: 3px solid #ffffff;
+    border-radius: 7px;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: "Roboto", Helvetica;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.photo-upload input[type="file"] {
+    display: none;
+}
+.photo-upload .file-name {
+    display: block;
+    color: #888;
+    font-size: 18px;
+    margin-top: 8px;
+    font-family: "Roboto", Helvetica;
+}
+
+.profile-image-wrapper {
+    position: relative;
+}
+
+.empty-rating-text {
+    color: #888;
+    font-size: 28px;
+    font-family: "Inter", Helvetica;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Скрываем лишние кнопки */
+.edit-actions {
+    display: none !important;
+}
